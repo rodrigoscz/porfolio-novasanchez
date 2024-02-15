@@ -1,0 +1,145 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import Mailing from "../components/icons/Mailing.astro";
+import Experience from "../components/Experience.astro";
+import Jobs from "../components/icons/Jobs.astro";
+import Code from "../components/icons/Code.astro";
+import AstroIcon from "../components/icons/AstroIcon.astro";
+import TailwindCSS from "../components/icons/TailwindCSS.astro";
+---
+
+<Layout
+  title="Rodrigo Sánchez - SEO Specialist, Web & Software Developer"
+  description="SEO Specialist y desarrollador web (en formación) con experiencia en el área de e-commerce, manejo de custom code, no-code y CMS. ¡Conoce más de mí!"
+>
+  <main class="px-4">
+    <section class="w-full mx-auto lg:w-[1000px] py-24 pb-24">
+      <h1
+        class="text-white text-3xl md-4xl lg:text-5xl font-bold flex center flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, ¡soy Rodrigo! <a
+          href="https://www.linkedin.com/in/rodrigoscz/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Listo para unirme a tu equipo!</Badge></a
+        >
+      </h1>
+      <p class="text-xl lg:text-2xl max-w-[1000px]">
+        <span>SEO Specialist con experiencia en área de e-commerce.</span>
+        <span class="text-yellow-200/90">
+          Desarrollador web en formación, podcaster y pensador crítico.
+        </span>
+        <span class="opacity-95">De Corrientes, Argentina 🇦🇷</span>. Enfocado en encontrar soluciones efectivas en las buenas prácticas del software y el mundo digital.
+      </p>
+
+      <nav class="flex flex-wrap gap-x-4 mt-8">
+        <SocialPill href="https://www.linkedin.com/in/rodrigoscz/">
+          <LinkedInIcon class="size-4 lg:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/rodrigoscz">
+          <GitHub class="size-4 lg:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill id="mailto" href="mailto:rodrigoscz.dev@gmail.com">
+          <Mailing class="size-4 lg:size-6" />
+          rodrigoscz.dev@gmail.com
+        </SocialPill>
+      </nav>
+    </section>
+    <section id="experience" class="w-full mx-auto lg:w-[1000px]">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
+        <Jobs class="size-8" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </section>
+
+    <section id="projects" class="w-full py-16 mx-auto lg:w-[1000px]">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
+        <Code class="size-8" />
+        Proyectos en los que trabajé
+      </h2>
+        <article
+          class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"
+        >
+          <div class="w-full md:w-1/2">
+            <div
+              class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
+            >
+              <img
+                alt="Screenshot de mi portfolio personal"
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src="./images/portfolio-project.jpg"
+              />
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-semibold">Porfolio personal</h3>
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                <li class="flex flex-row mb-2 gap-x-2">
+                  <span
+                    class="rounded-full border border-yellow/500 flex justify-center items-center gap-x-2 py-1 md:py-2 px-2 md:px-4 text-xs md:text-base"
+                  >
+                    <AstroIcon class="size-2 lg:size-4" /> Astro
+                  </span>
+                  <span
+                    class="rounded-full border border-yellow/500 flex justify-center items-center gap-x-2 py-1 md:py-2 px-2 md:px-4 text-xs md:text-base"
+                  >
+                    <TailwindCSS class="size-2 lg:size-4" /> Tailwind CSS
+                  </span>
+                </li>
+              </ul>
+
+              <p class="mt-2 text-stone-200 dark:text-stone-200">
+                Proyecto desarrollado para familiarizarme con los términos y
+                principios que rodean a las bases del desarrollo frontend.
+              </p>
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                <span
+                  class="rounded-full border border-yellow/500 flex justify-center items-center gap-x-2 py-1 md:py-2 px-2 md:px-4 text-xs md:text-base hover:scale-110"
+                >
+                  <GitHub class="size-2 lg:size-4 text-xs lg:text-xl" /><a href="https://github.com/rodrigoscz/portfolio.nova" target="_blank"> Accede al
+                  repo! </a>
+                </span>
+              </footer>
+            </div>
+          </div>
+        </article>
+    </section>
+    <section id="about" class="w-full mx-auto lg:w-[1000px] py-24 pb-24">
+      <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-[#FEFAE0] md:flex-row">
+        <div
+          class="[&>p]:mb-4 [&>p>strong]:text-[#FEFAE0] dark:[&>p>strong]:text-[#FEFAE0] [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+        >
+          <p>
+            Me llamo Rodrigo pero mis amigos me llaman Nova. Empecé en la
+            programación como un nexo entre la tecnología, el lenguaje y la linguística. Actualmente estoy <span class="text-[#DDA15E]"
+              >trabajando con empresas del extranjero somo SEO Specialist, y buscando mi primera experiencia en desarrollo frontend</span>.
+          </p>
+      
+          <p>
+            Como creador de contenido, <strong
+              >cuento con un podcast donde dialogo acerca del SEO <em class="italic text-[#DDA15E]">más allá de tutoriales, más cerca de la experiencia personal</em> en Spotify</strong
+            >. Mi objetivo es poder crear soluciones efectivas a los problemas que se presentan en el mundo digital. Trabajando desde el respeto y las buenas prácticas desde el primer momento.
+          </p>
+        </div>
+      
+        <img width="200" height="200" src="./images/rodrigo-sanchez.png" alt="Foto de Rodrigo Sánchez" class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20 " style="object-position: 50% 50%">
+      
+      </article>
+    </section>
+    <section id="contact">
+
+    </section>
+  </main>
+</Layout>

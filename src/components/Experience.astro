@@ -1,0 +1,43 @@
+---
+import ExperienceItem from "./ExperienceItems.astro";
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "SEO Specialist Freelance",
+    company: "Nova Sánchez",
+    description:
+      "Continua formación y generación de estrategias de SEO On-Page para clientes de manera freelance. Trabajando para el área de e-commerce (SEI, Beauty.Plus), entretenimiento, seguridad privada, botillería, y más.",
+  },
+  {
+    date: "2023-2024",
+    title: "SEO Specialist SSR",
+    company: "Infracommerce Latam",
+    description:
+      "Responsable de la creación y desarrollo de estrategias SEO para la mejora en el ranking de posicionamiento de distintos e-commerce a nivel regional. Responsable de la formación continua del equipo de SEO Jr. así como el apoyo logístico a los Head of SEO y SEO SR, respectivamente. Optimización enfocada en plataforma VTEX.",
+  },
+  {
+    date: "2023-2024",
+    title: "SEO Specialist SSR",
+    company: "Comunicare/Safe Marketing On-line",
+    description:
+      "Responsable de la creación y desarrollo de estrategias SEO para generación de leads, así como optimización de contenidos enfocado en la mejora de las conversiones. Mejora de un alto porcentaje en la tasa de retención de usuarios y optimización técnica de los sitios. Gestión y optimización de plataformas WordPress.",
+  },
+  {
+    date: "2022-2023",
+    title: "SEO Specialist SSR",
+    company: "Adwise Latam",
+    description:
+      "Co-creador y responsable del área de SEO y de la creación y desarrollo de estrategias para e-commerce. Mejora de más de un 60% en la tasa de conversiones y optimización de los sitios. Gestión y optimización de plataformas como Adobe Commerce, PrestaShop, VTEX y WordPress.",
+  },
+];
+---
+
+<ol class="relative mt-8 ml-4">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
