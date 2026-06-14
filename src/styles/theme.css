@@ -1,0 +1,12 @@
+/* theme.css: tokens del portfolio personal de Rodrigo Sánchez.
+   Tema oscuro fijo, sin selector de modo claro. */
+:root {
+  --arena: #0d1117;
+  --ink: #e7cda6;
+  --brown: #c9a978;
+  --terra: #c46a2b;
+  --paper: #161b22;
+  --line: #3a2f22;
+  --field: #0b0f14;
+  --codebg: rgba(231, 205, 166, 0.1);
+}

@@ -1,142 +1,404 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import LinkedInIcon from "../components/icons/LinkedIn.astro";
-import SocialPill from "../components/SocialPill.astro";
-import GitHub from "../components/icons/GitHub.astro";
-import Mailing from "../components/icons/Mailing.astro";
-import Experience from "../components/Experience.astro";
-import Jobs from "../components/icons/Jobs.astro";
-import Code from "../components/icons/Code.astro";
-import AstroIcon from "../components/icons/AstroIcon.astro";
-import TailwindCSS from "../components/icons/TailwindCSS.astro";
+import "../styles/theme.css";
+
+const profile = {
+  name: "Rodrigo Sánchez",
+  displayName: "Rodrigo",
+  handle: "@rodrigoscz_",
+  role: "Dev y SEO tecnico",
+  thesis: "Todo es lenguaje.",
+  intro:
+    "El codigo, el SEO, los reportes, los menus, los datos y las respuestas de un LLM. " +
+    "Soy Rodrigo, dev y SEO tecnico desde el NEA. Construyo webapps e investigaciones para entender como las maquinas y las personas interpretan lo que publicamos.",
+};
+
+// Las herramientas de la suite. href apunta al subdominio planeado;
+// repo queda como fallback verificable hasta que los subdominios esten cableados.
+const suite = [
+  {
+    name: "tres-lenguas",
+    tagline: "Un audit web, tres lentes.",
+    desc: "Traduce un informe SEO o tecnico a las voces de Tecnico, CMO y CFO. Cliente puro, sin backend.",
+    href: "https://tres-lenguas.novasanchez.com",
+    repo: "https://github.com/rodrigoscz/tres-lenguas",
+  },
+  {
+    name: "tropicaliza",
+    tagline: "El espanol no es uno solo.",
+    desc: "Linter de locale: marca rioplatensismos, calcos y registros que no viajan entre variantes del espanol.",
+    href: "https://tropicaliza.novasanchez.com",
+    repo: "https://github.com/rodrigoscz/tropicaliza",
+  },
+  {
+    name: "nav-sense",
+    tagline: "La navegacion tambien comunica.",
+    desc: "Analiza la arquitectura de informacion de un sitio y senala donde el menu confunde en vez de guiar.",
+    href: "https://nav-sense.novasanchez.com",
+    repo: "https://github.com/rodrigoscz/nav-sense",
+  },
+  {
+    name: "lang-forge",
+    tagline: "El laboratorio de la suite.",
+    desc: "Banco de experimentos e investigacion donde maduran las ideas que despues se vuelven herramientas.",
+    href: "https://lab.novasanchez.com",
+    repo: "https://github.com/rodrigoscz/lang-forge",
+  },
+];
 ---
 
-<Layout
-  title="Rodrigo Sánchez - SEO Specialist, Web & Software Developer"
-  description="SEO Specialist y desarrollador web (en formación) con experiencia en el área de e-commerce, manejo de custom code, no-code y CMS. ¡Conoce más de mí!"
->
-  <main class="px-4">
-    <section class="w-full mx-auto lg:w-[1000px] py-24 pb-24">
-      <h1
-        class="text-white text-3xl md-4xl lg:text-5xl font-bold flex center flex-row gap-x-4 pb-6 lg:pb-10"
-      >
-        Hey, ¡soy Rodrigo! <a
-          href="https://www.linkedin.com/in/rodrigoscz/"
-          target="_blank"
-          rel="noopener"
-          class="flex justify-center items-center"
-        >
-          <Badge>Listo para unirme a tu equipo!</Badge></a
-        >
-      </h1>
-      <p class="text-xl lg:text-2xl max-w-[1000px]">
-        <span>SEO Specialist con experiencia en área de e-commerce.</span>
-        <span class="text-yellow-200/90">
-          Desarrollador web en formación, podcaster y pensador crítico.
-        </span>
-        <span class="opacity-95">De Corrientes, Argentina 🇦🇷</span>. Enfocado en encontrar soluciones efectivas en las buenas prácticas del software y el mundo digital.
-      </p>
-
-      <nav class="flex flex-wrap gap-x-4 mt-8">
-        <SocialPill href="https://www.linkedin.com/in/rodrigoscz/">
-          <LinkedInIcon class="size-4 lg:size-6" />
-          LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/rodrigoscz">
-          <GitHub class="size-4 lg:size-6" />
-          GitHub
-        </SocialPill>
-        <SocialPill id="mailto" href="mailto:rodrigoscz.dev@gmail.com">
-          <Mailing class="size-4 lg:size-6" />
-          rodrigoscz.dev@gmail.com
-        </SocialPill>
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/nova-mark.svg" />
+    <title>{profile.name} · {profile.thesis}</title>
+    <meta
+      name="description"
+      content="Portfolio de Rodrigo Sanchez (rodrigoscz). Casa de la suite open-source todo es lenguaje."
+    />
+  </head>
+  <body>
+    <div class="site-actions" aria-label="Navegacion principal">
+      <nav class="topnav">
+        <a href="#sobre-mi">sobre mi</a>
+        <a href="#suite">la suite</a>
+        <a href="#contacto">contacto</a>
       </nav>
-    </section>
-    <section id="experience" class="w-full mx-auto lg:w-[1000px]">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
-        <Jobs class="size-8" />
-        Experiencia Laboral
-      </h2>
-      <Experience />
-    </section>
+    </div>
 
-    <section id="projects" class="w-full py-16 mx-auto lg:w-[1000px]">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
-        <Code class="size-8" />
-        Proyectos en los que trabajé
-      </h2>
-        <article
-          class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"
-        >
-          <div class="w-full md:w-1/2">
-            <div
-              class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
-            >
-              <img
-                alt="Screenshot de mi portfolio personal"
-                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-                loading="lazy"
-                src="./images/portfolio-project.jpg"
-              />
-            </div>
-          </div>
+    <main>
+      <header class="hero">
+        <span class="hero-mark">
+          <img
+            src="/nova-mark.svg"
+            width="120"
+            height="120"
+            alt="Marca de Nova"
+          />
+        </span>
+        <p class="thesis">{profile.thesis}</p>
+        <p class="sub">
+          {profile.intro}
+          <a href="https://x.com/rodrigoscz_">{profile.handle}</a>
+        </p>
+      </header>
 
-          <div class="w-full md:w-1/2 md:max-w-lg">
-            <h3 class="text-2xl font-semibold">Porfolio personal</h3>
-            <div class="flex flex-wrap mt-2">
-              <ul class="flex flex-row mb-2 gap-x-2">
-                <li class="flex flex-row mb-2 gap-x-2">
-                  <span
-                    class="rounded-full border border-yellow/500 flex justify-center items-center gap-x-2 py-1 md:py-2 px-2 md:px-4 text-xs md:text-xs"
-                  >
-                    <AstroIcon class="size-3 lg:size-4" /> Astro
-                  </span>
-                  <span
-                    class="rounded-full border border-yellow/500 flex justify-center items-center gap-x-2 py-1 md:py-2 px-2 md:px-4 text-xs md:text-xs"
-                  >
-                    <TailwindCSS class="size-3 lg:size-4" /> Tailwind CSS
-                  </span>
-                </li>
-              </ul>
+      <section id="sobre-mi">
+        <h2>&gt; sobre mi</h2>
+        <p>
+          Me interesa la parte invisible del trabajo digital: como una auditoria
+          se convierte en una decision, como una estructura semantica guia a un
+          algoritmo, como un reporte deja de ser ruido y empieza a decir algo
+          util.
+        </p>
+        <p>
+          Durante anos el marketing digital lleno carpetas de reportes que
+          alguien tenia que traducir para que un CMO o un CEO pudiera decidir
+          algo. Hoy el problema es mas grande: tambien tenemos que ser
+          entendidos por modelos, buscadores y sistemas que interpretan senales.
+        </p>
+        <p>
+          Ahi esta mi lugar: convertir ruido tecnico en sentido. Con webapps,
+          datasets, investigacion y codigo abierto.
+        </p>
+        <ul class="stack">
+          <li>Python · SQL · DataForSEO</li>
+          <li>TypeScript · Astro · Vite</li>
+          <li>Ingenieria de LLMs · SEO tecnico · semantica</li>
+        </ul>
+      </section>
 
-              <p class="mt-2 text-stone-200 dark:text-stone-200">
-                Proyecto desarrollado para familiarizarme con los términos y
-                principios que rodean a las bases del desarrollo frontend.
-              </p>
-              <footer class="flex items-end justify-start mt-4 gap-x-4">
-                <span
-                  class="rounded-full border border-yellow/500 flex justify-center items-center gap-x-2 py-1 md:py-2 px-2 md:px-4 md:text-xs md:text-base hover:scale-110"
-                >
-                  <GitHub class="size-3 lg:size-4 text-xs lg:text-xl" /><a href="https://github.com/rodrigoscz/portfolio.nova" target="_blank"> Accede al
-                  repo! </a>
-                </span>
-              </footer>
-            </div>
-          </div>
-        </article>
-    </section>
-    <section id="about" class="w-full mx-auto lg:w-[1000px] py-12 pb-12">
-      <article class="flex flex-col items-center justify-center gap-8 text-[#FEFAE0] dark:text-[#FEFAE0] md:flex-row">
-        <div
-          class="[&>p]:mb-4 [&>p>strong]:text-[#FEFAE0] dark:[&>p>strong]:text-[#FEFAE0] [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
-        >
-          <p>
-            Me llamo Rodrigo pero mis amigos me llaman Nova. Empecé en la
-            programación como un nexo entre la tecnología, el lenguaje y la linguística. Actualmente estoy <span class="text-[#DDA15E]"
-              >trabajando con empresas del extranjero somo SEO Specialist, y buscando mi primera experiencia en desarrollo frontend</span>.
-          </p>
-      
-          <p>
-            Como creador de contenido, <strong
-              >cuento con un podcast donde dialogo acerca del SEO <em class="italic text-[#DDA15E]">más allá de tutoriales, más cerca de la experiencia personal</em> en Spotify</strong
-            >. Mi objetivo es poder crear soluciones efectivas a los problemas que se presentan en el mundo digital. Trabajando desde el respeto y las buenas prácticas desde el primer momento.
-          </p>
+      <section id="suite">
+        <h2>&gt; la suite «todo es lenguaje»</h2>
+        <p class="section-intro">
+          Herramientas open-source, 100% del lado del cliente, que tratan el
+          lenguaje como materia prima. Cada una resuelve un problema concreto.
+        </p>
+        <div class="cards">
+          {
+            suite.map((tool) => (
+              <article class="card">
+                <h3>
+                  <a href={tool.href}>{tool.name}</a>
+                </h3>
+                <p class="card-tagline">{tool.tagline}</p>
+                <p class="card-desc">{tool.desc}</p>
+                <p class="card-links">
+                  <a href={tool.href}>abrir →</a>
+                  <a href={tool.repo}>codigo</a>
+                </p>
+              </article>
+            ))
+          }
         </div>
-      
-        <img width="200" height="200" src="./images/rodrigo-sanchez.png" alt="Foto de Rodrigo Sánchez" class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20 " style="object-position: 50% 50%">
-      
-      </article>
-    </section>
-  </main>
-</Layout>
+        <p class="suite-hub">
+          Indice completo de la suite en
+          <a href="https://github.com/rodrigoscz/lang-suite">lang-suite</a>.
+        </p>
+      </section>
+
+      <section id="contacto">
+        <h2>&gt; contacto</h2>
+        <p>
+          Si trabajas en SEO, desarrollo o lenguaje aplicado a LLMs, conversemos.
+        </p>
+        <p class="contact-links">
+          <a href="https://github.com/rodrigoscz">github</a>
+          <a href="https://x.com/rodrigoscz_">{profile.handle}</a>
+          <a href="mailto:rodrigoscz.dev@gmail.com">mail</a>
+        </p>
+      </section>
+
+      <footer>
+        <p class="suite">
+          <img src="/nova-mark.svg" width="16" height="16" alt="" />
+          {profile.name} · casa de la suite «todo es lenguaje» ·
+          <a href="https://x.com/rodrigoscz_">{profile.handle}</a> ·
+          <a href="https://github.com/rodrigoscz">github</a>
+        </p>
+      </footer>
+    </main>
+
+    <style is:global>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--arena);
+        color: var(--ink);
+        font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+        line-height: 1.55;
+      }
+      p {
+        text-align: justify;
+      }
+      main {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 4.5rem 1.25rem 4rem;
+      }
+      .site-actions {
+        position: fixed;
+        top: 0.9rem;
+        right: 0.9rem;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: color-mix(in srgb, var(--arena) 88%, transparent);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 0.35rem;
+        backdrop-filter: blur(10px);
+      }
+      .hero {
+        text-align: center;
+        padding: 1rem 0 1.5rem;
+      }
+      .hero-mark {
+        display: inline-block;
+      }
+      .hero img {
+        display: block;
+        image-rendering: pixelated;
+      }
+      h1 {
+        font-size: 2.4rem;
+        margin: 0.4rem 0 0;
+        letter-spacing: 0.04em;
+      }
+      .thesis {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--terra);
+        margin: 0.6rem 0 0.3rem;
+      }
+      .sub {
+        color: var(--brown);
+        max-width: 58ch;
+        margin: 0.6rem auto 0;
+        text-align-last: center;
+      }
+      .hero a {
+        color: var(--terra);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+      .hero a:hover {
+        border-bottom-color: var(--terra);
+      }
+      .topnav {
+        display: flex;
+        gap: 0.85rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .topnav a {
+        color: var(--brown);
+        text-decoration: none;
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        border-bottom: 1px solid transparent;
+      }
+      .topnav a:hover {
+        color: var(--terra);
+        border-bottom-color: var(--terra);
+      }
+      h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--brown);
+        border-bottom: 2px solid var(--line);
+        padding-bottom: 0.3rem;
+        margin: 2.6rem 0 1rem;
+      }
+      section p {
+        max-width: 64ch;
+      }
+      .section-intro {
+        color: var(--brown);
+      }
+      .stack {
+        list-style: none;
+        padding: 0;
+        margin: 1.8rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .stack li {
+        font-size: 0.8rem;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 0.3rem 0.7rem;
+        color: var(--brown);
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+      .card {
+        background: var(--paper);
+        border: 2px solid var(--line);
+        border-radius: 10px;
+        padding: 1rem 1.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+      .card:hover {
+        border-color: var(--terra);
+      }
+      .card h3 {
+        margin: 0;
+        font-size: 1.05rem;
+        letter-spacing: 0.02em;
+      }
+      .card h3 a {
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .card h3 a:hover {
+        color: var(--terra);
+      }
+      .card-tagline {
+        margin: 0;
+        color: var(--terra);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .card-desc {
+        margin: 0;
+        color: var(--brown);
+        font-size: 0.85rem;
+      }
+      .card-links {
+        margin: 0.4rem 0 0;
+        display: flex;
+        gap: 0.9rem;
+        font-size: 0.82rem;
+      }
+      .card-links a {
+        color: var(--terra);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+      .card-links a:hover {
+        border-bottom-color: var(--terra);
+      }
+      .suite-hub {
+        margin-top: 1.2rem;
+        font-size: 0.85rem;
+        color: var(--brown);
+      }
+      .suite-hub a,
+      #contacto a,
+      footer a {
+        color: var(--terra);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+      .suite-hub a:hover,
+      #contacto a:hover,
+      footer a:hover {
+        border-bottom-color: var(--terra);
+      }
+      .contact-links {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        margin-top: 0.6rem;
+      }
+      strong {
+        color: var(--ink);
+      }
+      footer {
+        margin-top: 3.5rem;
+        font-size: 0.78rem;
+        color: var(--brown);
+        text-align: center;
+      }
+      .suite {
+        opacity: 0.95;
+      }
+      .suite img {
+        vertical-align: -3px;
+        margin-right: 0.35rem;
+        image-rendering: pixelated;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+        }
+      }
+      @media (max-width: 640px) {
+        main {
+          padding-top: 7rem;
+        }
+        .site-actions {
+          left: 0.75rem;
+          right: 0.75rem;
+          justify-content: space-between;
+        }
+        .topnav {
+          gap: 0.65rem;
+        }
+        .topnav a {
+          font-size: 0.75rem;
+        }
+        .sub {
+          text-align-last: left;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </body>
+</html>

@@ -1,21 +1,21 @@
 {
-  "name": "portfolio-novasanchez",
+  "name": "novasanchez-portfolio",
+  "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "description": "Personal portfolio of Rodrigo Sanchez (rodrigoscz). Home of the open-source suite todo es lenguaje.",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "check": "astro check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.2",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.3.1",
-    "@fontsource-variable/onest": "^5.0.2",
-    "astro": "^4.3.5",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
+    "astro": "^4.16.18"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3"
   }
 }
