@@ -1,12 +1,46 @@
-/* theme.css: tokens del portfolio personal de Rodrigo Sánchez.
-   Tema oscuro fijo, sin selector de modo claro. */
+/* theme.css: sistema visual de la suite "todo es lenguaje" (rodrigoscz).
+
+   FUENTE CANÓNICA. Este archivo define el criterio para toda la suite.
+   Los demás repos se alinean contra este, no al revés.
+
+   Decisiones vigentes:
+   1. Tema oscuro fijo. Sin selector de modo claro.
+   2. --terra #d9853f. Da 6.08:1 sobre --paper y 6.65:1 sobre --arena,
+      ambos por encima del mínimo WCAG AA de 4.5.
+   3. Tipografía en tokens: Rajdhani para títulos, Sentient para cuerpo,
+      monoespaciada del sistema para chrome técnico. */
+
+/* Ambas son fuentes variables: un solo archivo cubre todo el rango de pesos.
+   Auto-hospedadas para no depender del CDN de Fontshare en tiempo de render. */
+@font-face {
+  font-family: "Rajdhani";
+  src: url("/fonts/rajdhani.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("/fonts/sentient.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  color-scheme: dark;
+
   --arena: #0d1117;
   --ink: #e7cda6;
   --brown: #c9a978;
-  --terra: #c46a2b;
+  --terra: #d9853f;
   --paper: #161b22;
   --line: #3a2f22;
   --field: #0b0f14;
   --codebg: rgba(231, 205, 166, 0.1);
+
+  --font-title: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Sentient", Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
 }
